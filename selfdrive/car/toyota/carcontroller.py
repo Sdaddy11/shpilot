@@ -71,7 +71,8 @@ class CarController():
     """
     0 - 13mph: max accel of 1.5
     13-50 mph - 1.5m/s2 - 0.5 m/s2 dropping linearly with speed
-    50 mph + = 0.5"""
+    50 mph + = 0.5
+    """
     
     curr_speed_mph = CS.out.vEgo * CV.MS_TO_MPH
     new_accel_max = ACCEL_MAX
