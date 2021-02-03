@@ -499,7 +499,7 @@ static void ui_draw_df_button(UIState *s) {
   nvgFontSize(s->vg, 45);
   nvgText(s->vg, btn_x - 34, btn_y + 50 + 15, "profile", NULL);
 }
-
+"""
 static void ui_draw_ml_button(UIState *s) {
   int btn_w = 475;
   int btn_h = 130;
@@ -527,7 +527,7 @@ static void ui_draw_ml_button(UIState *s) {
   nvgFontSize(s->vg, 60);
   nvgText(s->vg, x, y + btn_h / 8, "Toggle Model Long", NULL);
 }
-
+"""
 static void ui_draw_vision_header(UIState *s) {
   const Rect &viz_rect = s->scene.viz_rect;
   NVGpaint gradient = nvgLinearGradient(s->vg, viz_rect.x,
