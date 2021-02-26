@@ -500,34 +500,6 @@ static void ui_draw_df_button(UIState *s) {
   nvgText(s->vg, btn_x - 34, btn_y + 50 + 15, "profile", NULL);
 }
 
-static void ui_draw_ml_button(UIState *s) {
-  int btn_w = 475;
-  int btn_h = 130;
-  int x = 1920 / 2;
-  int y = 940;
-  int btn_x = x - btn_w / 2;
-  int btn_y = y - btn_h / 2;
-
-  nvgBeginPath(s->vg);
-  nvgRoundedRect(s->vg, btn_x, btn_y, btn_w, btn_h, 25);
-  if (s->scene.mlButtonEnabled) {  // change outline color based on status of button
-    nvgStrokeColor(s->vg, nvgRGBA(55, 184, 104, 255));
-  } else {
-    nvgStrokeColor(s->vg, nvgRGBA(184, 55, 55, 255));
-  }
-  nvgStrokeWidth(s->vg, 12);
-  nvgStroke(s->vg);
-
-  nvgBeginPath(s->vg);  // dark background for readability
-  nvgRoundedRect(s->vg, btn_x, btn_y, btn_w, btn_h, 25);
-  nvgFillColor(s->vg, nvgRGBA(75, 75, 75, 75));
-  nvgFill(s->vg);
-
-  nvgFillColor(s->vg, nvgRGBA(255, 255, 255, 255));
-  nvgFontSize(s->vg, 60);
-  nvgText(s->vg, x, y + btn_h / 8, "Toggle Model Long", NULL);
-}
-
 static void ui_draw_vision_header(UIState *s) {
   const Rect &viz_rect = s->scene.viz_rect;
   NVGpaint gradient = nvgLinearGradient(s->vg, viz_rect.x,
